@@ -1,0 +1,47 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:2.3.3'
+    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    classpath 'me.tatarka:gradle-retrolambda:3.3.1'
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    classpath "io.realm:realm-gradle-plugin:3.4.0"
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+  }
+}
+
+allprojects {
+  repositories {
+    jcenter()
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
+
+ext {
+  releaseVersionCode = 1
+  releaseVersionName = '1.0.0'
+
+  androidCompileSdkVersion = 25
+  androidBuildToolsVersion = '25.1.0'
+  androidSupportSdkVersion = '25.1.0'
+  minSdkVersion = 16
+  targetSdkVersion = 24
+
+  junitVersion = '4.12'
+
+  rxjava2Version = '2.0.8'
+  retrofit2Version = '2.2.0'
+  gsonVersion = '2.6.2'
+  butterknifeVersion = '8.4.0'
+  guavaVersion = '18.0'
+  daggerVersion = '2.7'
+}
