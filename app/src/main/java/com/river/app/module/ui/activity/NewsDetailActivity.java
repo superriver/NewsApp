@@ -12,8 +12,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.river.app.R;
 import com.river.app.base.BaseActivity;
-import com.river.app.bean.NewsListBean;
 import com.river.app.bean.MessageEvent;
+import com.river.app.bean.NewsListBean.NewsList.PageBean.ContentBean;
 import com.river.app.util.ViewUtil;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -47,13 +47,13 @@ public class NewsDetailActivity extends BaseActivity {
 
   @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
   public void onMessageEvent(MessageEvent event) {
-    NewsListBean.ShowapiResBodyBean.PageBean.ContentBean contentBean =
-        (NewsListBean.ShowapiResBodyBean.PageBean.ContentBean) event.getData();
+     ContentBean contentBean =
+        (ContentBean) event.getData();
 
     initData(contentBean);
   }
 
-  private void initData(NewsListBean.ShowapiResBodyBean.PageBean.ContentBean data) {
+  private void initData(ContentBean data) {
     if (data != null) {
       if (data.imageurls.size() == 0) {
         mImageView.setImageResource(R.drawable.ic_loading);

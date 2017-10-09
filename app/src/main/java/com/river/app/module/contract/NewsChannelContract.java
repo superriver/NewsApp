@@ -16,6 +16,6 @@ public interface NewsChannelContract {
     void updateTabFromDB(List<ChannelBean>  channels);
   }
   interface Presenter extends BasePresenter<View>{
-    void loadTasks(boolean forceUpdate);
+    void loadData();
   }
 }

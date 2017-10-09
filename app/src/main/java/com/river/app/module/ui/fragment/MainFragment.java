@@ -7,7 +7,7 @@ import com.river.app.R;
 import com.river.app.base.BaseAdapter;
 import com.river.app.base.BaseFragment;
 import com.river.app.bean.ChannelBean;
-import com.river.app.bean.NewsChannel;
+import com.river.app.bean.NewsChannel.NewsChannelBody.ChannelListBean;
 import com.river.app.module.contract.NewsChannelContract;
 import com.river.app.module.presenter.NewsChannelPresenter;
 import com.river.app.widget.HorizontalScrollMenu;
@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+;
 
 /**
  * Created by Administrator on 2017/4/6.
@@ -32,7 +34,7 @@ public class MainFragment extends BaseFragment<NewsChannelPresenter> implements 
     getFragmentComponent().inject(this);
   }
   @Override protected void initData() {
-    mPresenter.start();
+    mPresenter.loadData();
   }
 
   @Override protected int getLayoutId() {
@@ -44,9 +46,9 @@ public class MainFragment extends BaseFragment<NewsChannelPresenter> implements 
   //   // mPresenter=presenter;
   //}
 
-  @Override public void updateTab(List<NewsChannel.NewsChannelBody.ChannelListBean> channels) {
+  @Override public void updateTab(List<ChannelListBean> channels) {
 
-    for (NewsChannel.NewsChannelBody.ChannelListBean channel : channels) {
+    for (ChannelListBean channel : channels) {
       channelNames.add(channel.name);
       channelId.add(channel.channelId);
     }
@@ -84,7 +86,7 @@ public class MainFragment extends BaseFragment<NewsChannelPresenter> implements 
     @Override public List<Fragment> getContentViews() {
       List<Fragment> fragment = new ArrayList<>();
       for (String id : channelId) {
-        fragment.add(NewsPagerFragment.newsInstance(id));
+        fragment.add(NewsListFragment.newsInstance(id));
       }
       return fragment;
     }
@@ -93,4 +95,6 @@ public class MainFragment extends BaseFragment<NewsChannelPresenter> implements 
       // notifyDataSetChanged();
     }
   }
+
+
 }

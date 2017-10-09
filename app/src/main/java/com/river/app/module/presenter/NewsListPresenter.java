@@ -26,7 +26,6 @@ public class NewsListPresenter implements NewsListContract.Presenter {
   private String mName;
   private String mId;
   private boolean isRefresh = true;
-  private boolean mFirstLoad = true;
   @Inject Context mContext;
   @Inject public NewsListPresenter(NewsRemoteDataSource dataSource) {
     mDataSource = dataSource;
@@ -64,7 +63,6 @@ public class NewsListPresenter implements NewsListContract.Presenter {
       }
 
       @Override public void requestSuccess(NewsListBean data) {
-
         mView.getNewsList(data.showapi_res_body.pagebean.contentlist, null,
             isRefresh ? DataType.TYPE_REFRESH_SUCCESS : DataType.TYPE_LOADMORE_SUCCESS);
       }
@@ -87,9 +85,7 @@ public class NewsListPresenter implements NewsListContract.Presenter {
     requestList(mId);
   }
 
-  @Override public void start() {
 
-  }
 
   @Override public void attachView(NewsListContract.View view) {
     mView=view;

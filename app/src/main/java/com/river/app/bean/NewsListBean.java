@@ -8,16 +8,10 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/8/25.
  */
-@JsonIgnoreProperties(ignoreUnknown = true) public class NewsListBean {
-  @JsonProperty("showapi_res_code")
-  public int showapi_res_code;
-  @JsonProperty("showapi_res_error")
-  public String showapi_res_error;
-  @JsonProperty("showapi_res_body")
-  public ShowapiResBodyBean showapi_res_body;
-
+@JsonIgnoreProperties(ignoreUnknown = true) public class NewsListBean extends BaseBean{
+  public NewsList showapi_res_body;
   @JsonIgnoreProperties(ignoreUnknown = true)
-  public static class ShowapiResBodyBean {
+  public static class NewsList {
     @JsonProperty("ret_code")
     public int ret_code;
     @JsonProperty("pagebean")

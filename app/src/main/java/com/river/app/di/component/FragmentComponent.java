@@ -3,7 +3,7 @@ package com.river.app.di.component;
 import android.app.Activity;
 import com.river.app.annotation.FragmentScope;
 import com.river.app.di.module.FragmentModule;
-import com.river.app.module.ui.fragment.NewsPagerFragment;
+import com.river.app.module.ui.fragment.NewsListFragment;
 import com.river.app.module.ui.fragment.MainFragment;
 import dagger.Component;
 
@@ -16,5 +16,5 @@ import dagger.Component;
 public interface FragmentComponent {
   Activity activity();
   void inject(MainFragment mainFragment);
-  void inject(NewsPagerFragment healthPagerFragment);
+  void inject(NewsListFragment healthPagerFragment);
 }

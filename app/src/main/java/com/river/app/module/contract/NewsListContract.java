@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface NewsListContract {
   interface View extends BaseView {
-    void getNewsList(List<NewsListBean.ShowapiResBodyBean.PageBean.ContentBean> contents,String msg,int type);
+    void getNewsList(List<NewsListBean.NewsList.PageBean.ContentBean> contents,String msg,int type);
   }
   interface Presenter extends BasePresenter<View>{
     void requestList(String id);

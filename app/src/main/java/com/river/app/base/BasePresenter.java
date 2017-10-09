@@ -5,7 +5,6 @@ package com.river.app.base;
  */
 public interface BasePresenter<T extends BaseView> {
  // void onDestroy();
- void start();
  void attachView(T view);
  void detachView();
 }

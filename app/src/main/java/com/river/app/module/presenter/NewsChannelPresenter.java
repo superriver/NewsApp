@@ -30,11 +30,10 @@ public class NewsChannelPresenter implements NewsChannelContract.Presenter {
   //void setupListeners() {
   //  mView.setPresenter(this);
   //}
-  @Override public void loadTasks(boolean forceUpdate) {
+  @Override public void loadData() {
 
    ChannelManagerBean channel = mDBHelper.getChannelList();
     if(channel!=null){
-      //List<NewsChannel.Loreclass> list=channel.getChannels();
       mView.updateTabFromDB(channel.getChannels());
     }else {
       mDisposable = mDataSource.requestNewsChannel(new RequestCallBack<NewsChannel>() {
@@ -71,14 +70,9 @@ public class NewsChannelPresenter implements NewsChannelContract.Presenter {
 
   }
 
-  @Override public void start() {
-    loadTasks(false);
-  }
-
   @Override public void attachView(NewsChannelContract.View view) {
     mView = view;
   }
-
   @Override public void detachView() {
 
   }
