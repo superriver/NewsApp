@@ -1,7 +1,7 @@
 package com.river.app.module.presenter;
 
 import android.content.Context;
-import com.river.app.bean.ChannelManagerBean;
+import com.river.app.bean.ChannelManager;
 import com.river.app.bean.NewsChannel;
 import com.river.app.callback.RequestCallBack;
 import com.river.app.http.Api;
@@ -32,7 +32,7 @@ public class NewsChannelPresenter implements NewsChannelContract.Presenter {
   //}
   @Override public void loadData() {
 
-   ChannelManagerBean channel = mDBHelper.getChannelList();
+   ChannelManager channel = mDBHelper.getChannelList();
     if(channel!=null){
       mView.updateTabFromDB(channel.getChannels());
     }else {

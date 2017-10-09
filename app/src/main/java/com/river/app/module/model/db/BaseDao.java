@@ -1,6 +1,6 @@
 package com.river.app.module.model.db;
 
-import com.river.app.bean.ChannelManagerBean;
+import com.river.app.bean.ChannelManager;
 import com.river.app.bean.NewsChannel;
 
 /**
@@ -9,5 +9,5 @@ import com.river.app.bean.NewsChannel;
 
 public interface BaseDao {
     void saveChannelList(NewsChannel channel);
-    ChannelManagerBean getChannelList();
+    ChannelManager getChannelList();
 }

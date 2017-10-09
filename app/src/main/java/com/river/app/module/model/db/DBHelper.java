@@ -1,7 +1,7 @@
 package com.river.app.module.model.db;
 
 import com.river.app.bean.ChannelBean;
-import com.river.app.bean.ChannelManagerBean;
+import com.river.app.bean.ChannelManager;
 import com.river.app.bean.NewsChannel;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -30,8 +30,8 @@ public class DBHelper implements BaseDao {
       mList.add(new ChannelBean(bean.channelId,bean.name));
     }
 
-    final ChannelManagerBean bean = new ChannelManagerBean(mList);
-    ChannelManagerBean healthChannel = mRealm.where(ChannelManagerBean.class).findFirst();
+    final ChannelManager bean = new ChannelManager(mList);
+    ChannelManager healthChannel = mRealm.where(ChannelManager.class).findFirst();
     if(healthChannel!=null) {
       healthChannel.deleteFromRealm();
     }
@@ -42,8 +42,8 @@ public class DBHelper implements BaseDao {
     });
   }
 
-  @Override public ChannelManagerBean getChannelList() {
-    ChannelManagerBean healthChannel = mRealm.where(ChannelManagerBean.class).findFirst();
+  @Override public ChannelManager getChannelList() {
+    ChannelManager healthChannel = mRealm.where(ChannelManager.class).findFirst();
     if(null==healthChannel){
       return null;
     }
