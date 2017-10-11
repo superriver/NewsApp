@@ -1,5 +1,4 @@
 ![](https://github.com/superriver/NewsApp/tree/master/screenshot/jdfw.gif)
-
 使用Butterknifer来代替繁杂的findviewbyId() 
 使用RxJava2配合Retrofit2做网络请求 
 使用EventBus来方便组件间的通信 
