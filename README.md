@@ -1,5 +1,5 @@
 运行动态效果</br>
-![运行动态效果](https://github.com/superriver/NewsApp/screenshot/jdfw.gif)</br>
+![](https://github.com/superriver/NewsApp/blob/master/screenshot/jdfw.gif)</br>
 使用Butterknifer来代替繁杂的findviewbyId() </br>
 使用RxJava2配合Retrofit2做网络请求 </br>
 使用EventBus来方便组件间的通信 </br>
